@@ -428,7 +428,7 @@ The launch keyword (default `ts`) can be changed in the Workflow's Configuration
 		<string>ts</string>
 	</dict>
 	<key>version</key>
-	<string>2026.1</string>
+	<string>2026.2</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
