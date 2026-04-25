@@ -1,4 +1,4 @@
-# <img src='workflow/icon.png' width='45' align='center' alt='icon'> Tailscale Alfred Workflow
+# <img src='Workflow/icon.png' width='45' align='center' alt='icon'> Tailscale Alfred Workflow
 
 Browse your Tailnet, copy addresses, SSH into devices, and toggle the connection — all from Alfred.
 
@@ -6,7 +6,7 @@ Browse your Tailnet, copy addresses, SSH into devices, and toggle the connection
 
 Browse your Tailnet devices via the `ts` keyword. Connected devices appear first; offline ones show their last-seen time.
 
-![Browsing Tailnet devices](workflow/images/devices.png)
+![Browsing Tailnet devices](Workflow/images/devices.png)
 
 * <kbd>↩&#xFE0E;</kbd> Copy MagicDNS name.
 * <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> Copy IPv4 address.
@@ -19,19 +19,19 @@ Start typing to filter by name or address. Two command rows also become availabl
 
 Type `ts admin` to open the [Tailscale admin console](https://login.tailscale.com/admin/machines) in your default browser.
 
-![Opening admin console](workflow/images/admin.png)
+![Opening admin console](Workflow/images/admin.png)
 
 ### Toggle Tailscale
 
 Type `ts toggle` to connect or disconnect. The subtitle shows the current state.
 
-![Toggling the Tailscale connection](workflow/images/toggle.png)
+![Toggling the Tailscale connection](Workflow/images/toggle.png)
 
 ### Activate exit node
 
 Type `ts exit` to pick a peer to route traffic through. The first row disables the exit node; whichever option is currently in use is marked with `✓`.
 
-![Selecting an exit node](workflow/images/exit.png)
+![Selecting an exit node](Workflow/images/exit.png)
 
 ## Requirements
 
