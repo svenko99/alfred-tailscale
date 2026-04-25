@@ -2,6 +2,8 @@
 
 Browse your Tailnet, copy addresses, SSH into devices, and toggle the connection – all from [Alfred](https://www.alfredapp.com/).
 
+[**⤓ Download latest release**](https://github.com/svenko99/alfred-tailscale/releases/latest/download/Tailscale.alfredworkflow)
+
 ## Usage
 
 Browse your Tailnet devices via the `ts` keyword. Connected devices appear first; offline ones show their last-seen time.

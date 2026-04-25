@@ -430,6 +430,6 @@ The launch keyword (default `ts`) can be changed in the Workflow's Configuration
 	<key>version</key>
 	<string>2026.2</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/svenko99/alfred-tailscale</string>
 </dict>
 </plist>
