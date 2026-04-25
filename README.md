@@ -1,6 +1,6 @@
 # <img src='Workflow/icon.png' width='45' align='center' alt='icon'> Tailscale Alfred Workflow
 
-Browse your Tailnet, copy addresses, SSH into devices, and toggle the connection — all from Alfred.
+Browse your Tailnet, copy addresses, SSH into devices, and toggle the connection – all from [Alfred](https://www.alfredapp.com/).
 
 ## Usage
 
