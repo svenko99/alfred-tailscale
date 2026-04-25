@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.svenko99.tailscale</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>765DC974-4929-45A8-BD3D-C8F94DD34974</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EFCBC065-E07A-4B0E-A2A7-C1077BE4E0F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>885024D2-025F-40EA-8999-9DEB343B0E34</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>687B82C0-3916-4961-966B-0ED3B962C3B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>D39815D4-FE46-4E11-903A-4ABFDF01B7E9</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>17F8B0CE-DD20-4373-8E7C-65FEAEEADF44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3AB31381-4EAB-4D80-8631-25EFE2D87E37</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>99378C9A-AF6F-47A4-A660-595D52D58521</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6B1EE45D-3425-47D4-BDFB-16F04C537E6D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>765DC974-4929-45A8-BD3D-C8F94DD34974</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B89B0883-3D76-474B-AD68-B3C1CAFA3358</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>885024D2-025F-40EA-8999-9DEB343B0E34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>svenko99</string>
+	<key>description</key>
+	<string>Browse your Tailnet from Alfred.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Tailscale</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>687B82C0-3916-4961-966B-0ED3B962C3B2</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string>+</string>
+				<key>url</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>17F8B0CE-DD20-4373-8E7C-65FEAEEADF44</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>COPY</string>
+						<key>outputlabel</key>
+						<string>Copy</string>
+						<key>uid</key>
+						<string>D39815D4-FE46-4E11-903A-4ABFDF01B7E9</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>OPEN_URL</string>
+						<key>outputlabel</key>
+						<string>Open URL</string>
+						<key>uid</key>
+						<string>3AB31381-4EAB-4D80-8631-25EFE2D87E37</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>SSH</string>
+						<key>outputlabel</key>
+						<string>SSH</string>
+						<key>uid</key>
+						<string>6B1EE45D-3425-47D4-BDFB-16F04C537E6D</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Action</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>885024D2-025F-40EA-8999-9DEB343B0E34</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading…</string>
+				<key>script</key>
+				<string>/usr/bin/env python3 scripts/ts.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Browse Tailnet — type a device name, or "admin" / "toggle"</string>
+				<key>title</key>
+				<string>Tailscale</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B89B0883-3D76-474B-AD68-B3C1CAFA3358</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>ssh {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>99378C9A-AF6F-47A4-A660-595D52D58521</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Tailscale</string>
+				<key>title</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EFCBC065-E07A-4B0E-A2A7-C1077BE4E0F7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/env python3 scripts/dispatcher.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>765DC974-4929-45A8-BD3D-C8F94DD34974</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Tailscale Alfred Workflow
+
+Browse your Tailnet, copy addresses, SSH into devices, and toggle the connection — all from Alfred.
+
+## Usage
+
+Browse your Tailnet devices via the `ts` keyword. Connected devices appear first; offline ones show their last-seen time.
+
+![Browsing Tailnet devices](images/devices.png)
+
+* &lt;kbd&gt;↩&amp;#xFE0E;&lt;/kbd&gt; Copy MagicDNS name.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&amp;#xFE0E;&lt;/kbd&gt; Copy IPv4 address.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&amp;#xFE0E;&lt;/kbd&gt; Copy IPv6 address.
+* &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↩&amp;#xFE0E;&lt;/kbd&gt; SSH into the device (when [Tailscale SSH](https://tailscale.com/kb/1193/tailscale-ssh) is advertised).
+
+Start typing to filter by name or address. Two command rows also become available — press &lt;kbd&gt;⇥&lt;/kbd&gt; to autocomplete them.
+
+### Open admin console
+
+Type `ts admin` to open the [Tailscale admin console](https://login.tailscale.com/admin/machines) in your default browser.
+
+![Opening admin console](images/admin.png)
+
+### Toggle Tailscale
+
+Type `ts toggle` to connect or disconnect. The subtitle shows the current state.
+
+![Toggling the Tailscale connection](images/toggle.png)
+
+### Activate exit node
+
+Type `ts exit` to pick a peer to route traffic through. The first row disables the exit node; whichever option is currently in use is marked with `✓`.
+
+![Selecting an exit node](images/exit.png)
+
+## Configuration
+
+The launch keyword (default `ts`) can be changed in the Workflow's Configuration.
+
+## Requirements
+
+[Tailscale for macOS](https://tailscale.com/download/mac) must be installed. The workflow auto-detects the CLI at `/Applications/Tailscale.app/Contents/MacOS/Tailscale`, `/usr/local/bin/tailscale`, or `/opt/homebrew/bin/tailscale`.</string>
+	<key>uidata</key>
+	<dict>
+		<key>17F8B0CE-DD20-4373-8E7C-65FEAEEADF44</key>
+		<dict>
+			<key>xpos</key>
+			<real>445</real>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>687B82C0-3916-4961-966B-0ED3B962C3B2</key>
+		<dict>
+			<key>xpos</key>
+			<real>445</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>765DC974-4929-45A8-BD3D-C8F94DD34974</key>
+		<dict>
+			<key>xpos</key>
+			<real>445</real>
+			<key>ypos</key>
+			<real>395</real>
+		</dict>
+		<key>885024D2-025F-40EA-8999-9DEB343B0E34</key>
+		<dict>
+			<key>xpos</key>
+			<real>240</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>99378C9A-AF6F-47A4-A660-595D52D58521</key>
+		<dict>
+			<key>xpos</key>
+			<real>445</real>
+			<key>ypos</key>
+			<real>265</real>
+		</dict>
+		<key>B89B0883-3D76-474B-AD68-B3C1CAFA3358</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>EFCBC065-E07A-4B0E-A2A7-C1077BE4E0F7</key>
+		<dict>
+			<key>xpos</key>
+			<real>635</real>
+			<key>ypos</key>
+			<real>395</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>ts</string>
+				<key>placeholder</key>
+				<string>ts</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword used to launch the workflow.</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+	</array>
+	<key>variables</key>
+	<dict>
+		<key>keyword</key>
+		<string>ts</string>
+	</dict>
+	<key>version</key>
+	<string>2026.1</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
