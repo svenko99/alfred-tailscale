@@ -10,7 +10,7 @@ A public git repo for an Alfred workflow. The workflow itself lives in `./workfl
 ~/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/user.workflow.<UUID>
 ```
 
-Because of the symlink, any edit to `workflow/info.plist` or `workflow/scripts/` is immediately live in Alfred — there is no build step, no install step, and no separate "deploy". Be deliberate about edits.
+Because of the symlink, any edit to `workflow/info.plist` or `workflow/scripts/` is immediately live in Alfred for the maintainer — no build, no install, no deploy step for local iteration. Distribution to others is a separate flow (see "Releasing" below). Be deliberate about edits.
 
 `prefs.plist` (workflow runtime state written by Alfred) is gitignored.
 
@@ -51,6 +51,22 @@ To add a new action: emit it from `ts.py` with a unique `action` value, then eit
 - **Two READMEs to keep in sync.** The repo's top-level `README.md` (rendered on GitHub) and the `readme` key inside `workflow/info.plist` (the in-Alfred description) carry the same prose. Update both. Note the image paths differ: the GitHub README uses `workflow/images/...` and `workflow/icon.png`; the in-Alfred copy uses bare `images/...` and `icon.png` because Alfred renders it relative to the workflow dir.
 - **User-configurable keyword.** The script filter's `keyword` field is `{var:keyword}`. The default lives in the top-level `<key>variables</key>` block in `info.plist`; the user-overridable definition lives in `userconfigurationconfig`. If you add another configurable knob, mirror that pattern.
 - **No `mkdir`/install steps in code.** Per Alfred Gallery rules: no auto-updaters, no `pip install`/`brew install`, no downloading binaries. The workflow shells out to the user's already-installed Tailscale CLI only.
+
+## Releasing
+
+Releases are cut by tagging. `.github/workflows/release.yml` runs the [`svenko99/alfred-build-action`](https://github.com/svenko99/alfred-build-action) on `v*` tag pushes, builds a `.alfredworkflow` from `workflow/`, and attaches it to a new GitHub Release with auto-generated notes.
+
+- **Versioning is CalVer** (`<year>.<n>`), stored in `workflow/info.plist` under the top-level `<key>version</key>`. Example: `2026.1`, `2026.2`.
+- **Tag must match plist version with a `v` prefix.** The workflow has a guard step that fails the run if `${GITHUB_REF_NAME#v}` ≠ the `version` output from the build action.
+- **Use annotated tags, not lightweight ones.** The repo expects `push.followTags` workflow, which only pushes annotated tags. One-time setup: `git config --global push.followTags true`.
+- **Cutting a release:**
+  1. Bump `version` in `workflow/info.plist` (e.g. `2026.1` → `2026.2`).
+  2. `git commit -am "Release v2026.2"`
+  3. `git tag -a v2026.2 -m "v2026.2"`
+  4. `git push` — with `push.followTags` set, this pushes the commit *and* the annotated tag, triggering the Action. Without that config, use `git push --atomic origin main v2026.2` so the commit and tag land together.
+  5. The new release appears at <https://github.com/svenko99/alfred-tailscale/releases>.
+- **Patching a published release:** prefer bumping to the next CalVer (e.g. `2026.1.1` or `2026.2`) rather than rewriting the tag — anyone who already downloaded the old asset would otherwise be left with stale code.
+- **`prefs.plist` is excluded** from the build by the action itself, and from the repo by `.gitignore`. Do not commit it.
 
 ## Submission constraints (Alfred Gallery)
 
